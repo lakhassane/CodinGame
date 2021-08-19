@@ -1,12 +1,10 @@
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
 
  const MESSAGE = readline();
 
- // Write an answer using console.log()
- // To debug: console.error('Debug messages...');
+ const encode = {
+    "0" : "00",
+    "1" : "0"
+}
  
  const countBinaries = binary => {
      const len = binary.length;
@@ -30,21 +28,23 @@
  const generateOutput = array => {
      let word = [];
      for (bin of array) {
-         word.push(`${bin.bin === "1" ? "0" : "00"} ${bin.count.join('')}`)
+         word.push(`${encode[bin.bin]} ${bin.count.join('')}`)
      }
      return word.join(' ');
-     //console.log('word', word)
  }
  
  let bin = "";
  for (char of MESSAGE) {
-     let binTemp = char[0].charCodeAt(0).toString(2);
-     bin += binTemp;
+    let binTemp = char[0].charCodeAt(0).toString(2);
+    while (binTemp.length < 7) binTemp = '0' + binTemp;
+    
+    bin += binTemp;
  }
  
- while (bin.length < 7) bin = '0' + bin;
  
- 
+ // This additional step is not necessary.
+ // can be removed to pass "bin" to generateOutpu directly.
+ // But then some "adjustements" (:D) need to be done in generateOutput.
  const output = countBinaries(bin)
  //console.log('out', output)
  console.log(generateOutput(output));
