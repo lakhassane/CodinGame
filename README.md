@@ -1,6 +1,6 @@
 # CodinGame
 
-Some of my solution for the challenges in CodinGame. 
+Some of my solutions for the challenges in CodinGame. 
 
 Going from perfect to need improvements.
 
