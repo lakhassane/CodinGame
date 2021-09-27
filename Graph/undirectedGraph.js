@@ -1,6 +1,6 @@
 const undirectedPath = (edges, src, dst) => {
   const graph = buildGraph(edges);
-  return hasPath(graph, src, dst, new Set());
+  return hasPathRecursive(graph, src, dst, new Set());
 };
 
 const hasPathRecursive = (graph, src, dst, visitedSet) => {
@@ -11,7 +11,7 @@ const hasPathRecursive = (graph, src, dst, visitedSet) => {
   visitedSet.add(src);
 
   for (let neighbor of graph[src]) {
-    if (hasPath(graph, neighbor, dst, visitedSet)) return true;
+    if (hasPathRecursive(graph, neighbor, dst, visitedSet)) return true;
   }
   return false;
 };
