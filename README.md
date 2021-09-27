@@ -8,7 +8,7 @@ Check my [profile](https://www.codingame.com/profile/e72b53a2fc9c785ca04a2f62db5
 
 ## Algorithms
 
-### [Binary Search](https://github.com/lakhassane/CodinGame/blob/main/binarySearch.js)
+### [Binary Search](https://github.com/lakhassane/CodinGame/blob/main/Search/binarySearch.js)
 **Description**: 
 Check the intersection of 2 arrays using 3 methods: 
 - Classical insert/compare
