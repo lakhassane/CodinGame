@@ -14,7 +14,7 @@ function intersection(A, B) {
   }
 
   for (let i = 0; i < B.length; i++) {
-    if (s.get(B[i])) {
+    if (s.has(B[i])) {
       intersect.push(B[i]);
     }
   }
