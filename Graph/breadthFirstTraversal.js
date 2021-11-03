@@ -32,7 +32,7 @@ const hasPathRecursive = (graph, src, dst) => {
   if (src === dst) return true;
 
   for (let neighbor of graph[src]) {
-    if (hasPath(graph, neighbor, dst)) return true;
+    if (hasPathRecursive(graph, neighbor, dst)) return true;
   }
   return false;
 };
