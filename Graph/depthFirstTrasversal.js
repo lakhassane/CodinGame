@@ -32,7 +32,7 @@ const hasPathRecursive = (graph, src, dst) => {
   if (src === dst) return true;
 
   for (let neighbor of graph[src]) {
-    if (hasPath(graph, neighbor, dst)) return true;
+    if (hasPathRecursive(graph, neighbor, dst)) return true;
   }
   return false;
 };
@@ -41,7 +41,7 @@ const hasPathIterative = (graph, src, dst) => {
   let stack = [];
   stack = [...graph[src]];
 
-  while (stack.length > 0 && !hasPath) {
+  while (stack.length > 0) {
     let current = stack.pop();
     if (current === dst) return true;
     else stack = [...stack, ...graph[current]];
